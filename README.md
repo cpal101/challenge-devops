@@ -6,6 +6,7 @@
 You would find here a dummy microservice that exposes a single REST endpoint
 
 Input: an Amazon Keyword
+
 Output: a search-volume estimate on a 0-100 scale
 
 The service uses Java 8.
