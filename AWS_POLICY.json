@@ -1,0 +1,31 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1543244793193",
+      "Action": [
+        "ec2:AuthorizeSecurityGroupEgress",
+        "ec2:AuthorizeSecurityGroupIngress",
+        "ec2:RevokeSecurityGroupEgress",
+        "ec2:RevokeSecurityGroupIngress",
+        "ec2:RunInstances"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:ec2:us-east-1*"
+    },
+    {
+      "Sid": "Stmt1543245339836",
+      "Action": [
+        "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
+        "elasticloadbalancing:AttachLoadBalancerToSubnets",
+        "elasticloadbalancing:ConfigureHealthCheck",
+        "elasticloadbalancing:CreateLoadBalancer",
+        "elasticloadbalancing:CreateLoadBalancerPolicy",
+        "elasticloadbalancing:EnableAvailabilityZonesForLoadBalancer",
+        "elasticloadbalancing:RegisterInstancesWithLoadBalancer"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:elasticloadbalancing:us-east-1*"
+    }
+  ]
+}
