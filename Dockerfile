@@ -5,3 +5,6 @@ RUN apt-get -qq -y update && \
     rm -rf /var/cache/apt /var/lib/apt/lists/*
 
 # Your deployment script here
+RUN mkdir /var/app
+COPY . /var/app
+RUN cd /var/app && ant

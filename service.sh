@@ -12,12 +12,17 @@ dev_run() {
 
 docker_build() {
   # Your implementation here
-  true
+  DOCKER_IMAGE="docker-challenge"
+  docker build -t ${DOCKER_IMAGE} .
 }
 
 docker_run() {
   # Your implementation here
-  true
+  DOCKER_IMAGE="docker-challenge"
+  MESSAGE="executing on"
+  ROOT_DIR="/var/app"
+  APP_CMD="java -cp dist/amazon-keyword-estimate.jar:dist/lib/*:dist/conf com.keyword.KeywordMain \$*"
+  docker run -it ${DOCKER_IMAGE} sh -c "echo ${MESSAGE};hostname;cd ${ROOT_DIR};${APP_CMD}"
 }
 
 usage() {
