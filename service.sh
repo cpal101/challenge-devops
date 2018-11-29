@@ -22,7 +22,7 @@ docker_run() {
   MESSAGE="executing on"
   ROOT_DIR="/var/app"
   APP_CMD="java -cp dist/amazon-keyword-estimate.jar:dist/lib/*:dist/conf com.keyword.KeywordMain \$*"
-  docker run -it ${DOCKER_IMAGE} sh -c "echo ${MESSAGE};hostname;cd ${ROOT_DIR};${APP_CMD}"
+  docker run -p 8080:8080 -it ${DOCKER_IMAGE} sh -c "echo ${MESSAGE};hostname;cd ${ROOT_DIR};${APP_CMD}"
 }
 
 usage() {
